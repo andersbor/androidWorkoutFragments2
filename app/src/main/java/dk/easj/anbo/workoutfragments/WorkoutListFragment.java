@@ -3,8 +3,8 @@ package dk.easj.anbo.workoutfragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +16,7 @@ import android.widget.ListView;
  * A simple {@link Fragment} subclass.
  */
 public class WorkoutListFragment extends ListFragment {
-
-
-    static interface Listener {
+    interface Listener {
         void itemClicked(long id);
     }
 
@@ -36,7 +34,7 @@ public class WorkoutListFragment extends ListFragment {
         for (int i = 0; i < names.length; i++) {
             names[i] = Workout.workouts[i].getName();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(inflater.getContext(),
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(inflater.getContext(),
                 android.R.layout.simple_list_item_1, names);
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);

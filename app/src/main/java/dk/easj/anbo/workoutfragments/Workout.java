@@ -1,8 +1,8 @@
 package dk.easj.anbo.workoutfragments;
 
 public class Workout {
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
 
     public static final Workout[] workouts = {
             new Workout("The Limb Losener", "5 Handstands push-ups\n10 1-legged squats\\n15 Pullups"),
